@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Behavior Warning Form - Morelli Bus Lines</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @media print {
+        @page {
+          size: A4; /* Adjust as necessary, or use 'letter' for US paper size */
+          margin: 10mm; /* Adjust this value to ensure it fits within the printable area of the paper */
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-8">
+    <div id="formContainer" class="max-w-4xl mx-auto bg-white p-8 shadow">
+      <h1 class="text-2xl font-bold text-center mb-5">Morelli Bus Lines</h1>
+      <h2 class="text-xl font-semibold text-center mb-4">
+        School Bus Behavior Warning Form
+      </h2>
+
+      <form id="warningForm" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="date" class="block text-sm font-medium text-gray-700"
+              >Date</label
+            >
+            <input
+              type="date"
+              id="date"
+              name="date"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            />
+          </div>
+          <div>
+            <label
+              for="driverName"
+              class="block text-sm font-medium text-gray-700"
+              >Bus Driver Name</label
+            >
+            <input
+              type="text"
+              id="driverName"
+              name="driverName"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+              placeholder="Driver's Full Name"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label
+              for="schoolDistrict"
+              class="block text-sm font-medium text-gray-700"
+              >School District</label
+            >
+            <input
+              type="text"
+              id="schoolDistrict"
+              name="schoolDistrict"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+              placeholder="Name of School District"
+            />
+          </div>
+          <div>
+            <label for="school" class="block text-sm font-medium text-gray-700"
+              >School</label
+            >
+            <input
+              type="text"
+              id="school"
+              name="school"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+              placeholder="Name of School"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label
+            for="studentName"
+            class="block text-sm font-medium text-gray-700"
+            >Student's Name</label
+          >
+          <input
+            type="text"
+            id="studentName"
+            name="studentName"
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            placeholder="Student's Full Name"
+          />
+        </div>
+
+        <div>
+          <label for="grade" class="block text-sm font-medium text-gray-700"
+            >Grade</label
+          >
+          <input
+            type="text"
+            id="grade"
+            name="grade"
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            placeholder="Student's Grade Level"
+          />
+        </div>
+
+        <div>
+          <label
+            for="incidentTime"
+            class="block text-sm font-medium text-gray-700"
+            >Time of Incident</label
+          >
+          <input
+            type="time"
+            id="incidentTime"
+            name="incidentTime"
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+          />
+        </div>
+
+        <div>
+          <label
+            for="locationOnBus"
+            class="block text-sm font-medium text-gray-700"
+            >Location on Bus</label
+          >
+          <input
+            type="text"
+            id="locationOnBus"
+            name="locationOnBus"
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            placeholder="Seat Location/General Area"
+          />
+        </div>
+
+        <div>
+          <label
+            for="natureOfIncident"
+            class="block text-sm font-medium text-gray-700"
+            >Nature of Incident</label
+          >
+          <textarea
+            id="natureOfIncident"
+            name="natureOfIncident"
+            rows="4"
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md"
+            placeholder="Describe the incident..."
+          ></textarea>
+        </div>
+
+        <div>
+          <label
+            for="actionTaken"
+            class="block text-sm font-medium text-gray-700"
+            >Action Taken</label
+          >
+          <textarea
+            id="actionTaken"
+            name="actionTaken"
+            rows="3"
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md"
+            placeholder="Action taken (e.g., Verbal Warning Issued, Seat Change)"
+          ></textarea>
+        </div>
+
+        <div class="flex justify-between mt-8">
+          <button
+            type="button"
+            id="printBlankForm"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Print Blank Form
+          </button>
+          <button
+            type="submit"
+            id="saveForm"
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Save & Preview
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
