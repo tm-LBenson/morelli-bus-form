@@ -1,4 +1,4 @@
-navigator.vibrate(200)
+navigator.vibrate(2000)
 document.addEventListener('DOMContentLoaded', function () {
   const formContainer = document.getElementById('formContainer');
   const printBlankFormButton = document.getElementById('printBlankForm');
