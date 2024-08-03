@@ -1,7 +1,7 @@
+navigator.vibrate(200)
 document.addEventListener('DOMContentLoaded', function () {
   const formContainer = document.getElementById('formContainer');
   const printBlankFormButton = document.getElementById('printBlankForm');
-navigator.vibrate(200)
   function preparePrintVersion(isBlank = false) {
     const clone = formContainer.cloneNode(true);
     clone.querySelectorAll('input, textarea').forEach((input) => {
